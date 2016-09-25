@@ -20,9 +20,9 @@ $(function() {
     function createColumn() {
     	var $column = $('<div>').addClass('column');
 		var $columnTitle = $('<h2>').addClass('column-title').text(self.name);
-		var $columnCardList = $('<ul>').addClass('card-list');
+		var $columnCardList = $('<ul>').addClass('column-card-list');
 		var $columnDelete = $('<button>').addClass('btn-delete').text('x');
-		var $columnAddCard = $('<button>').addClass('add-card').text('Add Target Name');
+		var $columnAddCard = $('<button>').addClass('add-card').text('Dodaj zadanie');
 
 
 	$columnDelete.click(function() {
@@ -30,11 +30,11 @@ $(function() {
 	});
 
 	$columnAddCard.click(function() {
-	    self.addCard(new Card(prompt("Tell me what is the name of my next target:")));
+	    self.addCard(new Card(prompt("Wpisz nazwę następnego zadania:")));
 	});
 
 	$column.append($columnTitle)
-    	.append($columnDelete)
+		.append($columnTitle)
     	.append($columnAddCard)
     	.append($columnCardList);
 
@@ -106,7 +106,7 @@ $(function() {
 
 	$('.create-column')
 		.click(function(){
-			var column = new Column(prompt('asd:'));
+			var column = new Column(prompt('Nazwa kolumny:'));
     		board.addColumn(column);
 	});
 
@@ -117,9 +117,6 @@ $(function() {
 	board.addColumn(todoColumn);
 	board.addColumn(doingColumn);
 	board.addColumn(doneColumn);
-
-	var card1 = new Card('Nowe zadanie');
-	var card2 = new Card('Stworzyc tablice kanban');
 
 	todoColumn.addCard(card1);
 	doingColumn.addCard(card2);
