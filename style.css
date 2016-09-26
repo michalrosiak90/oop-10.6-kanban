@@ -104,3 +104,7 @@ h1 {
 .card-description {
 	color: #fff;
 }
+
+.column-card-list {
+	min-height: 200px;
+}
